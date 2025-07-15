@@ -113,12 +113,14 @@ npm start
 ### 1. **Vercel** (Recommended)
 
 **Option A: Using Vercel CLI**
+
 ```bash
 npm install -g vercel
 vercel --prod
 ```
 
 **Option B: GitHub Integration**
+
 1. Connect your GitHub repository to Vercel
 2. Set Root Directory to `frontend`
 3. Build Command: `npm run build`
@@ -126,6 +128,7 @@ vercel --prod
 5. Install Command: `npm install`
 
 **Environment Variables for Vercel:**
+
 ```env
 REACT_APP_API_URL=https://your-backend-url.com/api
 ```
