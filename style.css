@@ -1,0 +1,86 @@
+/* 
+🚨 ORIGINAL BROKEN CSS - KEPT FOR REFERENCE
+Issues Fixed in Tailwind CSS Version:
+1. Poor responsive design (no mobile-first approach)
+2. Hard-coded colors without design system
+3. Inconsistent spacing and typography
+4. No dark mode support
+5. Poor accessibility (contrast, focus states)
+6. Jarring hover animations (2s transition too slow)
+7. No systematic approach to colors and spacing
+*/
+
+* {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      height: 100vh;
+    }
+
+    #product-list {
+      display: grid;
+      width: 35%;
+      border-right: 1px solid #ccc;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    #product-detail {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .product-card {
+      background: #f5f5f5;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    /* 🚨 BUG: Jarring animation - 2s transition too slow */
+    .product-card:hover {
+      background: #aa1e1e;
+      transform: scale(1.1); 
+      transition: all 2s; /* 🚨 Too slow! */
+    }
+
+
+    #search-box {
+      width: 75%;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    button {
+      padding: 10px 15px;
+      background: #007bff;
+      color: rgb(183, 196, 204);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+
+    
+
+    button:hover {
+      background: #00b333;
+    }
+
+    .optionsbar{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    .optionsbar button{
+      padding: 5px 5px;
+    }
