@@ -10,7 +10,8 @@
     "build": "cd frontend && npm install && npm run build",
     "start": "cd frontend && npm start",
     "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
-    "setup": "npm run install:all"
+    "setup": "npm run install:all",
+    "vercel-build": "cd frontend && npm install && npm run build"
   },
   "keywords": ["ecommerce", "react", "tailwind", "nodejs", "express"],
   "author": "GenAI Hackathon Team",
