@@ -1,0 +1,22 @@
+{
+  "name": "auramarket-ecommerce",
+  "version": "1.0.0",
+  "description": "Modern ecommerce platform built with React, Tailwind CSS, and Node.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd frontend && npm start",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "cd frontend && npm install && npm run build",
+    "start": "cd frontend && npm start",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "setup": "npm run install:all",
+    "vercel-build": "cd frontend && npm install && npm run build"
+  },
+  "keywords": ["ecommerce", "react", "tailwind", "nodejs", "express"],
+  "author": "GenAI Hackathon Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
