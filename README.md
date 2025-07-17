@@ -1,5 +1,7 @@
 # AuraMarket - AI-Powered Ecommerce Platform
 
+> My submission for GEN AI Hackathon in Igniters Series organized by Technical Affairs IIITDM Kancheepuram
+
 A complete transformation of a broken static web project into a modern, production-ready ecommerce platform using **React**, **Tailwind CSS**, **Node.js**, and **AI-powered features**.
 
 ## Hackathon Overview
@@ -66,20 +68,6 @@ npm run dev
 
 **Technical Enhancements:** React Context State Management • RESTful API • Error Handling • Code Splitting • Security Features
 
-## Project Structure
-
-```
-auramarket-ecommerce/
-├── src/
-│   ├── components/        # Reusable UI components
-│   ├── pages/             # Main application pages
-│   ├── context/           # React Context providers
-│   ├── services/          # API and external services
-│   └── assets/            # Static files and images
-├── public/               # Public assets
-└── package.json          # Dependencies and scripts
-```
-
 ## Quick Start
 
 ```bash
@@ -127,11 +115,154 @@ vercel --prod
 4. Output Directory: `build`
 5. Install Command: `npm install`
 
-**Environment Variables for Vercel:**
+## Backend Deployment Guide
+
+### 1. **Railway** (Recommended - Easy & Free)
+
+**Step 1: Prepare your backend**
+
+```bash
+cd backend
+```
+
+**Step 2: Deploy to Railway**
+
+1. Go to [railway.app](https://railway.app) and sign up with GitHub
+2. Click "New Project" → "Deploy from GitHub repo"
+3. Select your `igniters-genai-submission` repository
+4. Set root directory to `backend`
+5. Railway will auto-detect and deploy
+
+**Step 3: Configure Environment Variables**
 
 ```env
-REACT_APP_API_URL=https://your-backend-url.com/api
+NODE_ENV=production
+FRONTEND_URL=https://your-vercel-app.vercel.app
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/auramarket
+JWT_SECRET=your-super-secret-jwt-key-here
+OPENAI_API_KEY=your-openai-api-key
 ```
+
+**Step 4: Get your backend URL**
+
+- Railway will give you a **public URL** like: `https://your-app.up.railway.app`
+- Use this public URL in your frontend's `REACT_APP_API_URL`
+
+**Example:**
+
+```env
+REACT_APP_API_URL=https://igniters-genai-submission.up.railway.app/api
+```
+
+**Testing:** Visit `https://your-railway-url.up.railway.app/api/health` to verify backend is running.
+
+### 2. **Render** (Alternative)
+
+**Step 1: Prepare**
+
+```bash
+cd backend
+```
+
+**Step 2: Deploy**
+
+1. Go to [render.com](https://render.com) and sign up
+2. Click "New +" → "Web Service"
+3. Connect your GitHub repository
+4. Set root directory to `backend`
+5. Set build command: `npm install`
+6. Set start command: `npm start`
+
+**Step 3: Environment Variables**
+Add the same environment variables as Railway in Render's dashboard.
+
+### 3. **Heroku** (Paid but reliable)
+
+**Step 1: Install Heroku CLI**
+
+```bash
+npm install -g heroku
+```
+
+**Step 2: Deploy**
+
+```bash
+cd backend
+heroku login
+heroku create your-app-name
+git subtree push --prefix=backend heroku main
+```
+
+**Step 3: Set Environment Variables**
+
+```bash
+heroku config:set NODE_ENV=production
+heroku config:set FRONTEND_URL=https://your-vercel-app.vercel.app
+heroku config:set MONGODB_URI=your-mongodb-connection-string
+heroku config:set JWT_SECRET=your-jwt-secret
+```
+
+### 4. **Quick Backend Setup for Testing**
+
+If you want to test locally while frontend is on Vercel:
+
+**Step 1: Install ngrok**
+
+```bash
+npm install -g ngrok
+```
+
+**Step 2: Start your backend**
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+**Step 3: Expose to internet**
+
+```bash
+ngrok http 5000
+```
+
+**Step 4: Use ngrok URL**
+
+- Copy the https URL from ngrok (e.g., `https://abc123.ngrok.io`)
+- Set in Vercel: `REACT_APP_API_URL=https://abc123.ngrok.io/api`
+
+## Database Setup
+
+### MongoDB Atlas (Recommended)
+
+1. Go to [mongodb.com/cloud/atlas](https://mongodb.com/cloud/atlas)
+2. Create free cluster
+3. Create database user
+4. Get connection string
+5. Use in `MONGODB_URI` environment variable
+
+### Environment Variables for Vercel:\*\*
+
+### Frontend Environment Variables for Vercel:
+
+```env
+# Option 1: For Demo/Hackathon (No backend needed)
+# Leave empty or don't set this variable to use mock data
+
+# Option 2: If you deploy backend to Railway
+REACT_APP_API_URL=https://igniters-genai-submission.up.railway.app/api
+
+# Option 3: If you deploy backend to Render
+REACT_APP_API_URL=https://your-app.onrender.com/api
+
+# Option 4: If you deploy backend to Heroku
+REACT_APP_API_URL=https://your-app.herokuapp.com/api
+
+# Option 5: For local development testing
+REACT_APP_API_URL=http://localhost:5000/api
+```
+
+**Note:** Since this is a hackathon demo, you can deploy the frontend without a backend. The app will automatically use mock data when no `REACT_APP_API_URL` is set.
 
 ### 2. **Netlify**
 
@@ -206,7 +337,7 @@ document.getElementById("filter").addEventListener("click", applyFilter);
 
 ### Fixed Modern Code
 
-```javascript
+````javascript
 // ✅ FIXED: Modern React with proper state management
 const [cartItems, setCartItems] = useState(() => {
   const saved = localStorage.getItem("auramarket_cart");
@@ -221,6 +352,10 @@ const ProductCard = ({ product }) => {
       <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
       <p>₹{product.price}</p>
+  )
+}
+
+```
 ## Summary
 
 **AuraMarket** is a modern, AI-powered ecommerce platform built with React and Node.js. It demonstrates advanced web development skills, AI integration, and responsive design principles.
@@ -303,4 +438,4 @@ For support, please use the AI chat assistant in the application or contact us t
 **Built with ❤️ and 🤖 AI during the GenAI Hackathon**
 
 _This project showcases the power of combining human creativity with AI assistance to transform broken code into a modern, production-ready application._
-```
+````

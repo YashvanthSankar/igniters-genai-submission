@@ -1,7 +1,9 @@
 import axios from "axios";
 
-const API_BASE_URL =
-  process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+
+// For hackathon demo - use mock data when no backend available
+const USE_MOCK_DATA = !process.env.REACT_APP_API_URL;
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
@@ -10,6 +12,37 @@ const apiClient = axios.create({
     "Content-Type": "application/json",
   },
 });
+
+// Mock data for demo
+const mockProducts = [
+  {
+    id: 1,
+    name: "Wireless Headphones",
+    price: 2999,
+    image: "https://via.placeholder.com/300x300?text=Headphones",
+    category: "electronics",
+    rating: 4.5,
+    reviews: []
+  },
+  {
+    id: 2,
+    name: "Smart Watch",
+    price: 9999,
+    image: "https://via.placeholder.com/300x300?text=Watch",
+    category: "electronics",
+    rating: 4.2,
+    reviews: []
+  },
+  {
+    id: 3,
+    name: "Cotton T-Shirt",
+    price: 699,
+    image: "https://via.placeholder.com/300x300?text=T-Shirt",
+    category: "clothing",
+    rating: 4.0,
+    reviews: []
+  }
+];
 
 // Request interceptor
 apiClient.interceptors.request.use(
