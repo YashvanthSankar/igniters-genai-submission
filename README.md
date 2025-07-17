@@ -146,4 +146,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 **Built with ❤️ and 🤖 AI during the GenAI Hackathon**
 
 _This project showcases the power of combining human creativity with AI assistance to transform broken code into a modern, production-ready application._
-````
