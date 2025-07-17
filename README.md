@@ -92,8 +92,8 @@ npm start
 
 ## AI Tools Used
 
-**ChatGPT/OpenAI:** Code generation, debugging, architecture planning, documentation
-**GitHub Copilot:** Real-time code completion, function implementations, refactoring
+**ChatGPT/OpenAI:** Code generation, debugging, architecture planning, documentation  
+**GitHub Copilot:** Real-time code completion, function implementations, refactoring  
 **AI-Powered Features:** Chat assistant, smart search, product recommendations
 
 ## Database Setup
@@ -129,7 +129,6 @@ REACT_APP_API_URL=http://localhost:5000/api
 
 **Note:** Since this is a hackathon demo, you can deploy the frontend without a backend. The app will automatically use mock data when no `REACT_APP_API_URL` is set.
 
-
 ## Performance Metrics
 
 - **Initial Load:** <2s
@@ -137,7 +136,6 @@ REACT_APP_API_URL=http://localhost:5000/api
 - **Bundle Size:** <1MB
 - **Lighthouse Score:** 90+
 - **Mobile Responsive:** 100%
-
 
 ## 📄 License
 
