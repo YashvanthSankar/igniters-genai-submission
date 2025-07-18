@@ -2,6 +2,8 @@
 
 > My submission for GEN AI Hackathon in Igniters Series organized by Technical Affairs IIITDM Kancheepuram
 
+> **Update:** 🏆 Won 1st prize in the Generative AI Hackathon as part of the Igniters Hackathon Series organized by Technical Affairs, IIITDM Kancheepuram.
+
 A complete transformation of a broken static web project into a modern, production-ready ecommerce platform using **React**, **Tailwind CSS**, **Node.js**, and **AI-powered features**.
 
 ## Hackathon Overview
